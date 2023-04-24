@@ -54,4 +54,13 @@ public class Enemy : MonoBehaviour
     private void Shoot(){
         Instantiate(_ememyBullet, _shootPoint.position, Quaternion.identity);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision){
+        if(collision.collider.TryGetComponent(out Player player))
+        {
+            player.TakeDamage(100);
+            Destroy(gameObject);
+        }
+
+    }
 }

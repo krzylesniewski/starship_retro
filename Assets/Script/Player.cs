@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
         if (_health <= 0)
         {
             Debug.Log("test" + _health + "dostalem za" + dmg);
+            Destroy(gameObject);
             // kill effect
             var killEffect = Instantiate(_getKilledEffect, transform.position, Quaternion.identity);
             Destroy(killEffect, 2f);
