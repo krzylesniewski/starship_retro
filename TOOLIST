@@ -1,0 +1,2 @@
+1. Poprawic kolejnosc wyswietlania efektów na player.
+2. zweryfikowac typ tutaj:   [SerializeField] private TextMesh _healthText;
