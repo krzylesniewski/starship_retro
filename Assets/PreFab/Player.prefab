@@ -248,18 +248,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc6756458c1e30a4faaeb1759a46b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 10
+  _health: 3
+  _healthText: {fileID: 0}
   _bulletPrefab: {fileID: 3461314926197023686, guid: 6950bacef638c78438df5aba4d180f86,
     type: 3}
   _shootPoint: {fileID: 8830030877798559866}
-  _shootEffect: {fileID: 5326080012510766500, guid: 419fab39c50ccb544bb163c73c4bc873,
+  _shootEffect: {fileID: 3435907201983747192, guid: 8d0bb34295b6c6d49969f69c3ead5e0c,
     type: 3}
-  _getHitEffect: {fileID: 8084530139270795929, guid: 166d6db788dd4694593857ddf18c92df,
+  _getHitEffect: {fileID: 3519412732494813112, guid: aa1d943386a65a84e84687ce3215e345,
     type: 3}
-  _getHitSound: {fileID: 0}
-  _getKilledEffect: {fileID: 3524901129977812493, guid: cc4c25603715f2248aeaddc0d06a4c73,
+  _getHitSound: {fileID: 9157368830374210855, guid: 9bb932acdf26eda439d0cde9e67277dd,
     type: 3}
-  _getKilledSoundEffect: {fileID: 0}
+  _getKilledEffect: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
+  _getKilledSoundEffect: {fileID: 9053042696613981970, guid: 4c0df73e3a52aa94a945b6c14492dfa0,
+    type: 3}
 --- !u!50 &8830030878590005017
 Rigidbody2D:
   serializedVersion: 4

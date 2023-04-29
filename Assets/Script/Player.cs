@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Player : MonoBehaviour
@@ -46,14 +47,15 @@ public class Player : MonoBehaviour
 
         if (_health <= 0)
         {
-            Debug.Log("test" + _health + "dostalem za" + dmg);
             Destroy(gameObject);
             // kill effect
             var killEffect = Instantiate(_getKilledEffect, transform.position, Quaternion.identity);
             Destroy(killEffect, 2f);
             // kill sound effect
             var killSoundEffect = Instantiate(_getKilledSoundEffect, transform.position, Quaternion.identity);
-            Destroy(killSoundEffect, 1f);
+            Destroy(killSoundEffect, 1.5f);
+            // restet game
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
             Destroy(gameObject);
         }

@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int _hp = 3;
     [SerializeField] private int _speed = 5;
 
+    // Enemy HealthBar
+    public HealthBar healthBar;
+
     // Enemy attack
     [SerializeField] private float _attakSpeed = 1.0f;
     [SerializeField] private BulletEnemy _ememyBullet;
@@ -22,7 +25,9 @@ public class Enemy : MonoBehaviour
 
 
     private void Start() {
+        healthBar.SetMaxHealth(3);
         InvokeRepeating("Shoot", 0, _attakSpeed);
+
     }
     private void Update() {
         transform.Translate(Vector2.down * Time.deltaTime * _speed);
@@ -35,6 +40,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         _hp -= dmg;
+        healthBar.SetHealth(_hp);
         var damageEffect = Instantiate(_getHitEffect, transform.position, Quaternion.identity);
         Destroy(damageEffect, 1f);
 
@@ -48,11 +54,12 @@ public class Enemy : MonoBehaviour
             Destroy(killSoundEffect, 1f);
 
             Destroy(gameObject);
+            Destroy(healthBar);
         }
     }
 
     private void Shoot(){
-        Instantiate(_ememyBullet, _shootPoint.position, Quaternion.identity);
+        var bullet = Instantiate(_ememyBullet, transform.position, Quaternion.identity);
     }
 
     private void OnCollisionEnter2D(Collision2D collision){
