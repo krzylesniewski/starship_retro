@@ -256,7 +256,7 @@ MonoBehaviour:
   _shootPoint: {fileID: 8830030877798559866}
   _shootEffect: {fileID: 3435907201983747192, guid: 8d0bb34295b6c6d49969f69c3ead5e0c,
     type: 3}
-  _gameScore: {fileID: 4173601131527239909, guid: 48cf0c5d385588c418629c4680e2a90b,
+  _gameScore: {fileID: -8291690787353566157, guid: 7d44e1d782a253d4f88accef35b8f440,
     type: 3}
   _getHitEffect: {fileID: 3519412732494813112, guid: aa1d943386a65a84e84687ce3215e345,
     type: 3}

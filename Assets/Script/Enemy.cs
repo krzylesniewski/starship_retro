@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour
     // EnemyUI
     [SerializeField] public HealthBar healthBar;
     [SerializeField] public GameScoreManager _gameScore;
-    [SerializeField] public TextMeshProUGUI _gameScoreText;
 
     // Enemy attack
     [SerializeField] private float _attakSpeed = 1.0f;
@@ -51,7 +50,6 @@ public class Enemy : MonoBehaviour
         if (_hp <= 0)
         {
             _gameScore.UpdateGameScoreUI(_killValue);
-            _gameScoreText.text = _gameScore.GetCurrentScore().ToString();
             // kill effect
             var killEffect = Instantiate(_getKilledEffect, transform.position, Quaternion.identity);
             Destroy(killEffect, 2f);
