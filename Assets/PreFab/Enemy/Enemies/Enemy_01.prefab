@@ -219,7 +219,7 @@ MonoBehaviour:
   _ememyBullet: {fileID: -7536753824863383389, guid: 7b5f2dda9a126b04592501d8815cc80c,
     type: 3}
   _shootPoint: {fileID: 4004595194402857957}
-  _getHitEffect: {fileID: 6192724089161036641, guid: e17d9a3f04750764c8c0a7a0461e4c3b,
+  _getHitEffect: {fileID: 8460667080445658512, guid: c07b9f4b414618142afbec30959c621a,
     type: 3}
   _getHitSound: {fileID: 3519412732494813112, guid: aa1d943386a65a84e84687ce3215e345,
     type: 3}
