@@ -6,13 +6,17 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private int _health = 10;
+    [SerializeField] private int _health = 3;
+    [SerializeField] private int _maxHealth;
     [SerializeField] private TextMeshProUGUI _healthText;
     [SerializeField] private Bullet _bulletPrefab;
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private GameObject _shootEffect;
 
-        // SoundEffects
+    // PlayerUI
+    [SerializeField] public GameScoreManager _gameScore;
+
+    // SoundEffects
     [SerializeField] private GameObject _getHitEffect;
     [SerializeField] private GameObject _getHitSound;
     [SerializeField] private GameObject _getKilledEffect;
@@ -23,6 +27,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _mainCamera = Camera.main;
+        _maxHealth = _health;
         UpdateHealthUI();
     }
     private void Update()
@@ -54,6 +59,7 @@ public class Player : MonoBehaviour
             // kill sound effect
             var killSoundEffect = Instantiate(_getKilledSoundEffect, transform.position, Quaternion.identity);
             Destroy(killSoundEffect, 1.5f);
+            _gameScore.ResetGameScoreUI();
             // restet game
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
@@ -62,7 +68,7 @@ public class Player : MonoBehaviour
     }
 
     private void UpdateHealthUI(){
-        _healthText.text = $"{_health}/10";
+        _healthText.text = $"HP: {_health}/{_maxHealth}";
     }
 
 }

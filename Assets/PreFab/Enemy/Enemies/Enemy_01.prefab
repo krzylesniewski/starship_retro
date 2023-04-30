@@ -214,7 +214,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 3
   _speed: 5
+  _killValue: 1
   healthBar: {fileID: 6173823535775210440}
+  _gameScore: {fileID: -8291690787353566157, guid: 7d44e1d782a253d4f88accef35b8f440,
+    type: 3}
+  _gameScoreText: {fileID: 9160926666797580137, guid: aed857a15b351b14a911cee93c90a2d5,
+    type: 3}
   _attakSpeed: 2
   _ememyBullet: {fileID: -7536753824863383389, guid: 7b5f2dda9a126b04592501d8815cc80c,
     type: 3}
